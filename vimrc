@@ -1,8 +1,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+" the pathogen call search the vim plugins on bundles
 
-syntax on               "activa els colors, etcètera
-set number              "mostra els números de línia a la part esquerra de la pantalla
+syntax on               "syntax highlighting
+set number              "show the line number on left
 set ruler               "mostra la línia en que ens trobem i la posició dins d'aquesta
 set showmode            "ens mostra si estem en mode edició, substitució o cap
 set hlsearch            "ressalta el text buscat
@@ -24,3 +25,40 @@ set diffopt=iwhite      "opcions per vimdiff: ignore white spaces
 colorscheme torte
 :filetype plugin on
 set mouse=a
+set listchars=tab:▸\ ,eol:¬
+set list
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+
+if has("autocmd")
+" Enable filetype detection
+filetype plugin indent on
+
+" Restore cursor position
+autocmd BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") |
+\ exe "normal! g`\"" |
+\ endif
+endif
+
+" movement on the same line
+" on Apple Keyboards: cmd + key
+vmap <D-j> gj
+vmap <D-k> gk
+vmap <D-4> g$
+vmap <D-6> g^
+vmap <D-0> g^
+nmap <D-j> gj
+nmap <D-k> gk
+nmap <D-4> g$
+nmap <D-6> g^
+nmap <D-0> g^
+
+" Bubble single lines: ctrl + up/down
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
