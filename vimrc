@@ -63,3 +63,6 @@ nmap <C-Down> ddp
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 
+" keep swap files in one of these
+set directory=/tmp
+set backupdir=/tmp
