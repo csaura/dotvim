@@ -22,3 +22,8 @@ git submodule add http://github.com/tpope/vim-rails.git bundle/rails
 git add .
 git commit -m "Install Fugitive.vim bundle as a submodule
 
+Especial for Plugins:
+
+# Command-t #
+cd ~/.vim/bundle/command-t
+rake make
