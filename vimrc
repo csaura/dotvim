@@ -21,7 +21,10 @@ set completeopt=preview "autocomple options. Alternative (vim 7): set completeop
 set pastetoggle=<F10>   "(paste) at F10
 set diffopt=iwhite      "vimdiff: ignore white spaces
 set background=dark
-colorscheme solarized
+colorscheme desert
+if has("gui_running")
+  colorscheme solarized
+endif
 :filetype plugin on
 set mouse=a
 set listchars=tab:▸\ ,eol:¬
@@ -85,3 +88,9 @@ vmap <C-Down> xp`[V`]
 " keep swap files in one of these
 set directory=/tmp
 set backupdir=/tmp
+
+" ragtag helpful
+inoremap <M-o>       <Esc>o
+inoremap <C-j>       <Down>
+let g:ragtag_global_maps = 1
+let g:CommandTMaxHeight = 30
