@@ -1,7 +1,3 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-" the pathogen call search the vim plugins on bundles
-
 syntax on               "syntax highlighting
 set number              "show the line number on left
 set ruler               "mostra la línia en que ens trobem i la posició dins d'aquesta
