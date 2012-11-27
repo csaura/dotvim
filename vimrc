@@ -22,6 +22,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'godlygeek/tabular'
 Bundle 'walm/jshint.vim'
 Bundle 'Solarized' 
+Bundle 'vim-scripts/YankRing.vim'
 
 filetype plugin indent on
 
