@@ -1,7 +1,45 @@
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/snipmate-snippets'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
+Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Raimondi/delimitMate'
+Bundle 'godlygeek/tabular'
+Bundle 'walm/jshint.vim'
+Bundle 'Solarized' 
+
+filetype plugin indent on
+
+" ctrlp configuration
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_mruf_relative = 1
+nmap <Leader>b :CtrlPBuffer<CR>
+nmap <Leader>e :CtrlPMRU<CR>
+nmap <Leader>o :CtrlPTag<CR>
+
+map <leader>n <ESC>:NERDTreeToggle<RETURN>
+
+let g:Powerline_symbols = 'fancy'
+
 syntax on               "syntax highlighting
 set number              "show the line number on left
 set ruler               "mostra la línia en que ens trobem i la posició dins d'aquesta
-set showmode            "ens mostra si estem en mode edició, substitució o cap
+set showmode
 set hlsearch            "highlight the search pattern
 set autoindent
 set cindent
@@ -13,18 +51,21 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set showmatch           "shows the other () or [] when we select one
-set completeopt=preview "autocomple options. Alternative (vim 7): set completeopt=preview,menu
+set completeopt=menu,preview "autocomple options. Alternative (vim 7): set completeopt=preview,menu
 set pastetoggle=<F10>   "(paste) at F10
 set diffopt=iwhite      "vimdiff: ignore white spaces
 set background=dark
+set mouse=a
+set listchars=tab:▸\ ,eol:¬
+set list
+set laststatus=2        " Always show the statusline
+set encoding=utf-8      " Necessary to show Unicode glyphs
+
 colorscheme desert
 if has("gui_running")
   colorscheme solarized
 endif
-:filetype plugin on
-set mouse=a
-set listchars=tab:▸\ ,eol:¬
-set list
+
 
 " Don't beep
 set visualbell
@@ -32,31 +73,12 @@ highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
 if has("autocmd")
-  " Enable filetype detection
-  filetype plugin indent on
-
   " Restore cursor position
   autocmd BufReadPost *
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \ exe "normal! g`\"" |
         \ endif
 endif
-
-set statusline=%F%m%r%h%w[%L]%y[%p%%][%04v][%{fugitive#statusline()}]
-"              | | | | |  |   |      |  |     |    |
-"              | | | | |  |   |      |  |     |    + current
-"              | | | | |  |   |      |  |     |       column
-"              | | | | |  |   |      |  |     +-- current line
-"              | | | | |  |   |      |  +-- current % into file
-"              | | | | |  |   |      +-- current syntax in
-"              | | | | |  |   |          square brackets
-"              | | | | |  |   +-- current fileformat
-"              | | | | |  +-- number of lines
-"              | | | | +-- preview flag in square brackets
-"              | | | +-- help flag in square brackets
-"              | | +-- readonly flag in square brackets
-"              | +-- rodified flag in square brackets
-"              +-- full path to file in the rbuffer
 
 " <leader> key
 let mapleader = ","
@@ -77,6 +99,7 @@ nmap <D-0> g^
 " Bubble single lines: ctrl + up/down
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
+
 " Bubble multiple lines
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
