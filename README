@@ -7,23 +7,7 @@ Create symlinks:
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 
-Switch to the `~/.vim` directory, and fetch submodules:
+Run vundle install:
+vim
+:BundleInstall
 
-cd ~/.vim
-git submodule init
-git submodule update
-
-
-How To install new bundles (vim plugins)
-
-cd ~/.vim
-mkdir ~/.vim/bundle
-git submodule add http://github.com/tpope/vim-rails.git bundle/rails
-git add .
-git commit -m "Install Fugitive.vim bundle as a submodule
-
-Especial for Plugins:
-
-# Command-t #
-cd ~/.vim/bundle/command-t
-rake make
