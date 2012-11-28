@@ -22,7 +22,9 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'godlygeek/tabular'
 Bundle 'walm/jshint.vim'
 Bundle 'Solarized' 
-Bundle 'vim-scripts/YankRing.vim'
+
+" C-P is used by ctrlp and YankRing
+"Bundle 'vim-scripts/YankRing.vim'
 
 filetype plugin indent on
 
@@ -114,3 +116,9 @@ inoremap <M-o>       <Esc>o
 inoremap <C-j>       <Down>
 let g:ragtag_global_maps = 1
 let g:CommandTMaxHeight = 30
+
+if has('persistent_undo')
+  silent !mkdir -p ~/.vim/tmp
+  set undodir=~/.vim/tmp
+  set undofile
+endif
