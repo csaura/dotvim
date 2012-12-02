@@ -63,6 +63,7 @@ set listchars=tab:▸\ ,eol:¬
 set list
 set laststatus=2        " Always show the statusline
 set encoding=utf-8      " Necessary to show Unicode glyphs
+set guifont=Monaco\ for\ Powerline:h11
 
 colorscheme desert
 if has("gui_running")
