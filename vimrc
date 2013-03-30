@@ -63,11 +63,14 @@ set listchars=tab:▸\ ,eol:¬
 set list
 set laststatus=2        " Always show the statusline
 set encoding=utf-8      " Necessary to show Unicode glyphs
-set guifont=Monaco\ for\ Powerline:h11
+set guifont=Monaco\ for\ Powerline:h10
 
 colorscheme desert
 if has("gui_running")
   colorscheme solarized
+  let g:solarized_termcolors = 256
+  let g:solarized_visibility = "high"
+  let g:solarized_contrast = "high"
 endif
 
 
