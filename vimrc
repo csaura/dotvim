@@ -21,7 +21,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'godlygeek/tabular'
 Bundle 'walm/jshint.vim'
-Bundle 'Solarized' 
+Bundle 'altercation/vim-colors-solarized' 
 
 " C-P is used by ctrlp and YankRing
 "Bundle 'vim-scripts/YankRing.vim'
@@ -57,13 +57,14 @@ set showmatch           "shows the other () or [] when we select one
 set completeopt=menu,preview "autocomple options. Alternative (vim 7): set completeopt=preview,menu
 set pastetoggle=<F10>   "(paste) at F10
 set diffopt=iwhite      "vimdiff: ignore white spaces
-set background=dark
 set mouse=a
 set listchars=tab:▸\ ,eol:¬
 set list
 set laststatus=2        " Always show the statusline
 set encoding=utf-8      " Necessary to show Unicode glyphs
 set guifont=Monaco\ for\ Powerline:h10
+set background=light
+set autoread
 
 colorscheme desert
 if has("gui_running")
