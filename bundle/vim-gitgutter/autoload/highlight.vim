@@ -28,18 +28,16 @@ function! highlight#define_signs()
   sign define GitGutterLineModifiedRemoved
   sign define GitGutterDummy
 
-  if g:gitgutter_signs
-    call highlight#define_sign_symbols()
-    call highlight#define_sign_text_highlights()
-  endif
+  call highlight#define_sign_symbols()
+  call highlight#define_sign_text_highlights()
   call highlight#define_sign_line_highlights()
 endfunction
 
 function! highlight#define_sign_symbols()
-  exe "sign define GitGutterLineAdded           text=" . g:gitgutter_sign_added
-  exe "sign define GitGutterLineModified        text=" . g:gitgutter_sign_modified
-  exe "sign define GitGutterLineRemoved         text=" . g:gitgutter_sign_removed
-  exe "sign define GitGutterLineModifiedRemoved text=" . g:gitgutter_sign_modified_removed
+  execute "sign define GitGutterLineAdded           text=" . g:gitgutter_sign_added
+  execute "sign define GitGutterLineModified        text=" . g:gitgutter_sign_modified
+  execute "sign define GitGutterLineRemoved         text=" . g:gitgutter_sign_removed
+  execute "sign define GitGutterLineModifiedRemoved text=" . g:gitgutter_sign_modified_removed
 endfunction
 
 function! highlight#define_sign_text_highlights()
@@ -61,5 +59,4 @@ function! highlight#define_sign_line_highlights()
     sign define GitGutterLineRemoved         linehl=
     sign define GitGutterLineModifiedRemoved linehl=
   endif
-  redraw!
 endfunction
