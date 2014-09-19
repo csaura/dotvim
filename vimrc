@@ -22,7 +22,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'walm/jshint.vim'
 Bundle 'altercation/vim-colors-solarized' 
 Bundle 'airblade/vim-gitgutter'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'fxn/vim-monochrome'
 
 " C-P is used by ctrlp and YankRing
