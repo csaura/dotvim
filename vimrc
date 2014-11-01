@@ -1,33 +1,34 @@
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-markdown'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/snipmate-snippets'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Raimondi/delimitMate'
-Bundle 'godlygeek/tabular'
-Bundle 'walm/jshint.vim'
-Bundle 'altercation/vim-colors-solarized' 
-Bundle 'airblade/vim-gitgutter'
-Bundle 'fatih/vim-go'
-Bundle 'fxn/vim-monochrome'
+Plugin 'gmarik/Vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/snipmate-snippets'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'Raimondi/delimitMate'
+Plugin 'godlygeek/tabular'
+Plugin 'walm/jshint.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'fatih/vim-go'
+Plugin 'fxn/vim-monochrome'
 
 " C-P is used by ctrlp and YankRing
 "Bundle 'vim-scripts/YankRing.vim'
 
+call vundle#end()
 filetype plugin indent on
 
 " ctrlp configuration
